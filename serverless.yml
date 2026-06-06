@@ -1,0 +1,47 @@
+service: crud
+
+provider:
+  name: aws
+  runtime: nodejs22.x
+  region: ap-south-1
+  environment:
+    MONGO_URI: ${env:MONGO_URI}
+
+plugins:
+  - serverless-offline
+
+functions:
+  createUser:
+    handler: handlers/createUser.createUser
+    events:
+      - httpApi:
+          path: /users
+          method: post
+
+  getUsers:
+    handler: handlers/getUsers.getUsers
+    events:
+      - httpApi:
+          path: /users
+          method: get
+
+  getUser:
+    handler: handlers/getUser.getUser
+    events:
+      - httpApi:
+          path: /users/{id}
+          method: get
+
+  updateUser:
+    handler: handlers/updateUser.updateUser
+    events:
+      - httpApi:
+          path: /users/{id}
+          method: put
+
+  deleteUser:
+    handler: handlers/deleteUser.deleteUser
+    events:
+      - httpApi:
+          path: /users/{id}
+          method: delete

@@ -1,0 +1,20 @@
+{
+  "name": "crud",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+   "scripts": {
+    "dev": "serverless offline --reloadHandler"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "mongodb": "^7.2.0"
+  },
+  "devDependencies": {
+    "serverless-offline": "^14.7.1"
+  }
+}
